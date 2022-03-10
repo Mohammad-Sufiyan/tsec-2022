@@ -13,16 +13,38 @@ import {
 const data = [
   {
     name: "Day 1",
-    uv: 62,
+    uv: 3001,
+    pv: 5500,
+    amt: 2290,
   },
   {
     name: "Day 2",
-    uv: 80,
+    uv: 4010,
+    pv: 6700,
+    amt: 2290,
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
+    name: "Day 3",
+    uv: 3300,
+    pv: 1200,
+    amt: 2290,
+  },
+  {
+    name: "Day 4",
+    uv: 1800,
+    pv: 5600,
+    amt: 2290,
+  },
+  {
+    name: "Day 5",
+    uv: 2500,
+    pv: 4400,
+    amt: 2290,
+  },
+  {
+    name: "Day 6",
+    uv: 4000,
+    pv: 3400,
     amt: 2290,
   },
 ];

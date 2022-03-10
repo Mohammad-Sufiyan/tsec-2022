@@ -6,52 +6,53 @@ import { useSelector } from "react-redux";
 import { useSession } from "../helpers/useSession";
 import { SignIn } from "./SignIn";
 import { TodayDiet } from "../components/TodayDiet";
-
-const food_diet = [
-  {
-    food: "Sandwhich and Orange Juice",
-    dateTime: "9 March 2022, 9:00 am ",
-  },
-  {
-    food: "Sandwhich and Orange Juice",
-    dateTime: "9 March 2022, 9:00 am ",
-  },
-  {
-    food: "Sandwhich and Orange Juice",
-    dateTime: "9 March 2022, 9:00 am ",
-  },
-  {
-    food: "Sandwhich and Orange Juice",
-    dateTime: "9 March 2022, 9:00 am ",
-  },
-];
+import axios from "axios";
 
 export const Dashboard = () => {
   useSession();
+
   const {
     isLoggedIn,
     userData: { name, role },
   } = useSelector((state) => state?.users);
+
+  const notifyPatient = async () => {
+    const res = await axios.post(
+      process.env.REACT_APP_BASE_URL + "/user/notify"
+    );
+
+    alert(res.data);
+  };
 
   return (
     <>
       {!isLoggedIn && <SignIn />}
       {isLoggedIn && (
         <Layout>
-          <div className="flex flex-col mb-3 p-4 ps-0 rounded-md">
-            <div className="flex gap-1">
-              <h3 className="text-2xl font-medium text-gray-700">
-                Welcome Back,
-              </h3>
-              <span className="px-2 text-2xl font-bold text-gray-700">
-                {name}
+          <div className="flex justify-between items-center">
+            <div className="flex flex-col mb-3 p-4 ps-0 rounded-md">
+              <div className="flex gap-1">
+                <h3 className="text-2xl font-medium text-gray-700">
+                  Welcome Back,
+                </h3>
+                <span className="px-2 text-2xl font-bold text-gray-700">
+                  {name}
+                </span>
+              </div>
+              <span className="text-base text-gray-500">
+                Currently Logged in as {role}
               </span>
             </div>
-            <span className="text-base text-gray-500">
-              Currently Logged in as {role}
-            </span>
+            <button
+              className="bg-blue-700 px-5 py-2 rounded-md shadow text-base text-white w-auto h-12"
+              onClick={notifyPatient}
+            >
+              <i class="fa fa-phone me-2" aria-hidden="true"></i>
+              Remind For Video Call
+            </button>
           </div>
-          <div className="grid grid-cols-2 w-full gap-7 mb-2 h-96">
+
+          <div className="grid grid-cols-2 w-full gap-7 h-96 mb-1">
             <div className="bg-white p-8 shadow-md rounded-md overflow-y-scroll">
               <TodayDiet />
             </div>
@@ -59,8 +60,9 @@ export const Dashboard = () => {
               <JokesBlock />
             </div>
           </div>
-
-          <div className="grid grid-cols-1 w-full h-auto gap-7 mt-2">
+          <br />
+          <br />
+          <div className="grid grid-cols-1 w-full h-auto mt-2 gap-7">
             <div className="bg-white p-8 shadow-md rounded-md">
               <h4 className="text-xl font-semibold text-gray-700 mb-3">
                 Patient's Accuracy

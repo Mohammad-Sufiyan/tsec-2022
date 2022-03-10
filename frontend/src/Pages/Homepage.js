@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import signInImage from "../images/landing_bg.jpeg";
 import "../style.css";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.js";
+
 export const Homepage = () => {
   return (
     <>
       <div className="bg-blue-600">
         <nav className="px-4 bg-blue-600">
           <div className="container flex flex-wrap justify-between items-center mx-auto">
-            <Link to="/homepage" className="flex items-center link">
+            <Link to="/" className="flex items-center link">
               <span
                 className="self-center text-2xl font-semibold whitespace-nowrap text-white"
                 style={{ letterSpacing: "4px" }}
@@ -98,18 +101,20 @@ export const Homepage = () => {
                 className="col-lg-12 col-xl-12"
                 style={{ margin: "150px 50px 50px 50px", color: "white" }}
               >
-                <h1>One stop solution to Demantia</h1>
-                <h3>
+                <h1 className="text-3xl text-white">
+                  One Stop Solution to Dementia
+                </h1>
+                <p className="text-lg text-gray-300">
                   Now take care of your patient
                   <br /> more smartly{" "}
-                </h3>
-                <Link
-                  to="#services"
+                </p>
+                {/* <Link
+                  to="#links"
                   className="btn-get-started scrollto"
                   style={{ textDecoration: "none" }}
                 >
                   <button className="btn btn-success">Get Started</button>{" "}
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -210,7 +215,7 @@ export const Homepage = () => {
 
       <section
         id="services"
-        class="services section-bg "
+        class="services section-bg min-h-screen py-6"
         style={{ backgroundColor: "blue" }}
       >
         <div class="container" data-aos="fade-up">
@@ -220,6 +225,7 @@ export const Homepage = () => {
           >
             <h2>Our Features</h2>
             <p>A customer is the most important visitor on our premises!</p>
+            <br />
           </div>
 
           <div class="row">
@@ -271,36 +277,8 @@ export const Homepage = () => {
         <footer>
           <div className="container">
             <div className="row">
-              <div className="col-sm-6 col-md-3 item">
-                <h3>Services</h3>
-                <ul>
-                  <li>
-                    <Link to="#">Web design</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Development</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Hosting</Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-sm-6 col-md-3 item">
-                <h3>About</h3>
-                <ul>
-                  <li>
-                    <Link to="#">Company</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Team</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Careers</Link>
-                  </li>
-                </ul>
-              </div>
               <div className="col-md-6 item text">
-                <h3>Company Name</h3>
+                <h3>CLARIFY</h3>
                 <p>
                   Praesent sed lobortis mi. Suspendisse vel placerat ligula.
                   Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam
@@ -323,7 +301,7 @@ export const Homepage = () => {
                 </Link>
               </div>
             </div>
-            <p className="copyright">Company Name © 2018</p>
+            <p className="copyright">CARIFY©2022</p>
           </div>
         </footer>
       </div>

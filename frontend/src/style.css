@@ -1,10 +1,16 @@
 .link {
   text-decoration: none;
 }
+
+body a{
+  text-decoration: none;
+}
+
 .icon-box {
   background-color: rgb(233, 233, 247);
   border-radius: 10px;
   padding: 20px;
+  transition: all .5s ease;
 }
 
 .icon-box .icon {

@@ -61,7 +61,7 @@ export const Appointments = () => {
       // setIsLoading(true);
       const res = await axios.post(
         process.env.REACT_APP_BASE_URL + "/user/fetchAppointment",
-        { email: window.sessionStorage.getItem("loggedEmail") }
+        { id: window.sessionStorage.getItem("loggedId") }
       );
 
       console.log(res.data.message);
@@ -112,7 +112,7 @@ export const Appointments = () => {
                               scope="col"
                               className="py-3 px-6 text-sm tracking-wider text-left text-blue-700 uppercase font-bold"
                             >
-                              Role
+                              Patient Name
                             </th>
                             <th
                               scope="col"
@@ -139,15 +139,13 @@ export const Appointments = () => {
                             appointmentData.map((item) => (
                               <tr className="bg-white border-b">
                                 <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
-                                  {item.name}
+                                  {item.doctorName}
                                 </td>
                                 <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">
-                                  {item.specialization}
+                                  {item.patientName}
                                 </td>
                                 <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">
-                                  {item.hospitalName}
-                                  <br />
-                                  {item.location}
+                                  {item.contact}
                                 </td>
                                 <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">
                                   {new Date(item.date).toDateString()}{" "}

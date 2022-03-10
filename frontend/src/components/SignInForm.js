@@ -48,18 +48,18 @@ export const SignInForm = ({ setFormState }) => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-3 px-4 py-6 w-10/12 rounded-md shadow-md">
-      <h3 className="text-3xl text-gray-800 font-normal">
+      <h3 className="text-3xl text-gray-800 font-normal mb-0 pb-0">
         Welcome Back to
         <span className="text-blue-700 px-2 font-bold">CARIFY</span>
       </h3>
-      <p className="text-base text-gray-600">
+      <p className="text-base text-gray-600 mb-0 pb-0">
         Now take care of your patient more smartly
       </p>
       <form
         className="grid grid-cols-1 p-3 w-3/4"
         onSubmit={Formik.handleSubmit}
       >
-        <div className="flex flex-col gap-2 py-3">
+        <div className="flex flex-col gap-1 py-3">
           <label
             className="text-base font-semibold text-gray-700"
             htmlFor="email"
@@ -124,7 +124,10 @@ export const SignInForm = ({ setFormState }) => {
             Sign Up
           </span>
         </button>
-        <Link to="/user/update-password" className="my-1 text-center">
+        <Link
+          to="/user/update-password"
+          className="my-1 text-center text-gray-700"
+        >
           Already a member?
           <span
             className="text-blue-700 px-2 font-medium hover:underline"
@@ -134,7 +137,10 @@ export const SignInForm = ({ setFormState }) => {
           </span>
         </Link>
         <div className="flex justify-center">
-          <Link to="/" className="underline hover:text-blue-700 text-base">
+          <Link
+            to="/"
+            className="underline hover:text-blue-700 text-base text-gray-700"
+          >
             Go back to Homepage
           </Link>
         </div>

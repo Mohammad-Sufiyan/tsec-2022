@@ -112,7 +112,7 @@ export const UpdatePassword = () => {
       <div className="flex justify-center items-center h-full my-4">
         <form
           onSubmit={Formik.handleSubmit}
-          className="flex flex-col gap-y-2 bg-gray-200 py-8 px-14 rounded-lg shadow-lg my-3"
+          className="flex flex-col gap-y-2 bg-gray-200 py-8 px-14 rounded-lg shadow-md my-3"
         >
           <h3 className="text-3xl text-gray-800 font-normal">
             Welcome to

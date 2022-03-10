@@ -20,7 +20,7 @@ export const SideBar = () => {
             Today is {new Date().toDateString()}
           </span>
         </div>
-        <ul class="space-y-4">
+        <ul class="space-y-4 ml-0 pl-0">
           {role === "caretaker" && (
             <li>
               <Link
